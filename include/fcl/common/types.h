@@ -85,6 +85,9 @@ template <typename S>
 using Matrix3 = Eigen::Matrix<S, 3, 3>;
 
 template <typename S>
+using MatrixX = Eigen::Matrix<S, Eigen::Dynamic, Eigen::Dynamic>;
+
+template <typename S>
 using Quaternion = Eigen::Quaternion<S>;
 
 template <typename S>
