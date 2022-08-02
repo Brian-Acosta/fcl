@@ -20,26 +20,30 @@ public:
 
   using S = S_;
 
-  HeightField(MatrixX<S> heights, S dim_x, S dim_y);
+  HeightField(MatrixX<S> heights, S dim_x, S dim_y, S depth);
 
   int nx;
   int ny;
   S dim_x;
   S dim_y;
+  S depth;
   S x_resolution;
   S y_resolution;
   MatrixX<S> heights;
   VectorX<S> x_grid;
   VectorX<S> y_grid;
   void computeLocalAABB() override;
-  NODE_TYPE getNodeType() const override;
-  Matrix3<S> computeMomentOfInertia() const override;
-  S computeVolume() const override;
+  auto getNodeType() const -> NODE_TYPE override;
+  auto computeMomentOfInertia() const -> Matrix3<S> override;
+  auto computeVolume() const -> S override;
 
 };
 
 using HeightFieldf = HeightField<float>;
 using HeightFieldd = HeightField<double>;
-}
+
+} //namespace fcl
+
+#include "fcl/geometry/shape/height_field-inl.h"
 
 #endif
