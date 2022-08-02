@@ -34,7 +34,7 @@ public:
   VectorX<S> y_grid;
   void computeLocalAABB() override;
   auto getNodeType() const -> NODE_TYPE override;
-  auto computeMomentOfInertia() const -> Matrix3<S> override;
+  auto computeMomentofInertia() const -> Matrix3<S> override;
   auto computeVolume() const -> S override;
 
 };

@@ -44,7 +44,7 @@ template <typename S>
 auto HeightField<S>::computeVolume() const -> S { return 0; }
 
 template <typename S>
-auto HeightField<S>::computeMomentOfInertia() const -> Matrix3<S>
+auto HeightField<S>::computeMomentofInertia() const -> Matrix3<S>
 {
   return Matrix3<S>::Zero();
 }
