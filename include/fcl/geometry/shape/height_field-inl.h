@@ -12,12 +12,12 @@ class FCL_EXPORT HeightField<double>;
 template <typename S>
 HeightField<S>::HeightField(MatrixX<S> heights, S dim_x, S dim_y, S depth)
   : ShapeBase<S>(), heights(heights),
-      x_grid(VectorX<S>::LinSpaced(heights.cols(), -dim_x / 2, dim_x / 2)),
-      y_grid(VectorX<S>::LinSpaced(heights.rows(), -dim_y / 2, dim_y / 2)),
+      x_grid(VectorX<S>::LinSpaced(heights.rows(), -dim_x / 2, dim_x / 2)),
+      y_grid(VectorX<S>::LinSpaced(heights.cols(), -dim_y / 2, dim_y / 2)),
       dim_x(dim_x), dim_y(dim_y),
       depth(depth),
-      x_resolution(dim_x / (heights.cols() - 1)),
-      y_resolution(dim_y / (heights.rows() - 1)),
+      x_resolution(dim_x / (heights.rows() - 1)),
+      y_resolution(dim_y / (heights.cols() - 1)),
       nx(heights.cols()),
       ny(heights.rows())
 {
